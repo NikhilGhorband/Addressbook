@@ -10,10 +10,10 @@
             {
                 Console.WriteLine("Select an Option: ");
                 Console.WriteLine("1. Add a new Address Book");
-                Console.WriteLine("2. Add a Contact.");
-                Console.WriteLine("3. all Contacts.");
-                Console.WriteLine("4. Edit  contact.");
-                Console.WriteLine("5. Delete Contact.");
+                Console.WriteLine("2. Add a Contact to an address book.");
+                Console.WriteLine("3. Print all Contacts in Address book.");
+                Console.WriteLine("4. Edit a contact in Address Book.");
+                Console.WriteLine("5. Delete Contact from an Address book.");
                 Console.WriteLine("6. Quit");
                 Console.Write("Option: ");
 
