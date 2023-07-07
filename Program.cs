@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             AddressBookManagement addressBookManager = new AddressBookManagement();
+            string filePath = @"C:\Users\sharm\Desktop\Fellowship program\RFP-287\AddressBook\AddressBook\ContactInfo.txt";
 
             while (true)
             {
@@ -14,16 +15,17 @@
                 Console.WriteLine("3. Print all Contacts.");
                 Console.WriteLine("4. Edit a contact.");
                 Console.WriteLine("5. Delete Contact.");
-                Console.WriteLine("6. Search contact.");
+                Console.WriteLine("6. Search contact by city or state");
                 Console.WriteLine("7. View Contacts by City ");
                 Console.WriteLine("8. View Contacts by State ");
                 Console.WriteLine("9. Contacts count by City");
                 Console.WriteLine("10. Contacts count by State");
-                Console.WriteLine("11. Sort entries in the address book by FirstName and LastName");
-                Console.WriteLine("12. Sort entries in the address book by City");
-                Console.WriteLine("13. Sort entries in the address book by State");
-                Console.WriteLine("14. Sort entries in the address book by Zipcode");
-                Console.WriteLine("15. Quit");
+                Console.WriteLine("11. Sort enteries in the address book by FirstName and LastName");
+                Console.WriteLine("12. Sort enteries in the address book by City");
+                Console.WriteLine("13. Sort enteries in the address book by State");
+                Console.WriteLine("14. Sort enteries in the address book by Zipcode");
+                Console.WriteLine("15. Read from the txt file.");
+                Console.WriteLine("16. Quit");
                 Console.Write("Option: ");
 
                 string choice = Console.ReadLine();
@@ -154,6 +156,9 @@
                         addressBookManager.SortContactsByZipcode(sortByZipcode);
                         break;
                     case "15":
+                        addressBookManager.ReadContacts(filePath);
+                        break;
+                    case "16":
                         Console.WriteLine("Exiting...");
                         return;
                     default:
