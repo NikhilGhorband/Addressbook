@@ -9,13 +9,15 @@
             while (true)
             {
                 Console.WriteLine("Select an Option: ");
-                Console.WriteLine("1. Add  new AddressBook");
+                Console.WriteLine("1. Add new AddressBook");
                 Console.WriteLine("2. Add a Contact.");
-                Console.WriteLine("3. Print all Contacts.");
+                Console.WriteLine("3. Print all.");
                 Console.WriteLine("4. Edit a contact.");
                 Console.WriteLine("5. Delete Contact.");
                 Console.WriteLine("6. Search contact by city or state");
-                Console.WriteLine("7. Quit");
+                Console.WriteLine("7. View Contacts by City ");
+                Console.WriteLine("8. View Contacts by State ");
+                Console.WriteLine("9. Quit");
                 Console.Write("Option: ");
 
                 string choice = Console.ReadLine();
@@ -95,6 +97,18 @@
                         addressBookManager.SearchContactsByCityOrState(result);
                         break;
                     case "7":
+                        Console.WriteLine("Enter City to view contacts: ");
+                        string viewByCity = Console.ReadLine();
+
+                        addressBookManager.ViewContactsByCity(viewByCity);
+                        break;
+                    case "8":
+                        Console.WriteLine("Enter State to view contacts: ");
+                        string viewByState = Console.ReadLine();
+
+                        addressBookManager.ViewContactsByState(viewByState);
+                        break;
+                    case "9":
                         Console.WriteLine("Exiting...");
                         return;
                     default:
