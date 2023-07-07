@@ -23,7 +23,7 @@ namespace AddressBook
                 Console.WriteLine("Address     = " + contact.Address);
                 Console.WriteLine("City        = " + contact.City);
                 Console.WriteLine("State       = " + contact.State);
-                Console.WriteLine("pincode         = " + contact.Pincode);
+                Console.WriteLine("Zip         = " + contact.Zipcode);
                 Console.WriteLine("PhoneNumber = " + contact.PhoneNumber);
                 Console.WriteLine("Email       = " + contact.Email);
             }
@@ -57,7 +57,7 @@ namespace AddressBook
             Console.Write("State: ");
             string newState = Console.ReadLine();
 
-            Console.Write("Pincode: ");
+            Console.Write("Zip: ");
             string newZip = Console.ReadLine();
 
             Console.Write("Phone Number: ");
@@ -71,11 +71,25 @@ namespace AddressBook
             contactToEdit.Address = newAddress;
             contactToEdit.City = newCity;
             contactToEdit.State = newState;
-            contactToEdit.Pincode = newZip;
+            contactToEdit.Zipcode = newZip;
             contactToEdit.PhoneNumber = newPhoneNumber;
             contactToEdit.Email = newEmail;
 
             Console.WriteLine("Contact updated.");
+        }
+
+        public void DeleteContact(string firstName, string lastName)
+        {
+            Contacts contactToDelete = contacts.Find(contact => contact.FirstName == firstName && contact.LastName == lastName);
+
+            if (contactToDelete == null)
+            {
+                Console.WriteLine("Contact not found.");
+                return;
+            }
+
+            contacts.Remove(contactToDelete);
+            Console.WriteLine("Contact deleted.");
         }
     }
 }
