@@ -215,7 +215,6 @@ namespace AddressBook
                 Console.WriteLine("-----------------------------------------");
             }
         }
-
         public void SearchContactsByCityOrState(string cityOrState)
         {
             List<Contacts> searchResults = new List<Contacts>();
@@ -253,5 +252,30 @@ namespace AddressBook
                 Console.WriteLine("-----------------------------------------");
             }
         }
+        public int CountByCity(string city)
+        {
+            if (contactsByCity.ContainsKey(city))
+            {
+                List<Contacts> contacts = contactsByCity[city];
+                return contacts.Count;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        public int CountByState(string state)
+        {
+            if (contactsByState.ContainsKey(state))
+            {
+                List<Contacts> contacts = contactsByState[state];
+                return contacts.Count;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }
+
