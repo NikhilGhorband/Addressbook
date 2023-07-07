@@ -151,5 +151,44 @@ namespace AddressBook
                 Console.WriteLine("-----------------------------------------");
             }
         }
+
+        public void SearchContactsByCityOrState(string cityOrState)
+        {
+            List<Contacts> searchResults = new List<Contacts>();
+
+            foreach (var addressBook in addressBooks.Values)
+            {
+                foreach (var contact in addressBook)
+                {
+                    if (contact.City.Equals(cityOrState, StringComparison.OrdinalIgnoreCase) ||
+                        contact.State.Equals(cityOrState, StringComparison.OrdinalIgnoreCase))
+                    {
+                        searchResults.Add(contact);
+                    }
+                }
+            }
+            if (searchResults.Count > 0)
+            {
+                Console.WriteLine("Search Results: ");
+                foreach (var contact in searchResults)
+                {
+                    Console.WriteLine("FirstName   = " + contact.FirstName);
+                    Console.WriteLine("LastName    = " + contact.LastName);
+                    Console.WriteLine("Address     = " + contact.Address);
+                    Console.WriteLine("City        = " + contact.City);
+                    Console.WriteLine("State       = " + contact.State);
+                    Console.WriteLine("Zip         = " + contact.Zipcode);
+                    Console.WriteLine("PhoneNumber = " + contact.PhoneNumber);
+                    Console.WriteLine("Email       = " + contact.Email);
+                    Console.WriteLine("-----------------------------------------");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No contacts found in the specified city or state");
+                Console.WriteLine("-----------------------------------------");
+            }
+        }
     }
 }
+
