@@ -10,17 +10,20 @@
             {
                 Console.WriteLine("Select an Option: ");
                 Console.WriteLine("1. Add new AddressBook");
-                Console.WriteLine("2. Add Contact.");
+                Console.WriteLine("2. Add a Contact.");
                 Console.WriteLine("3. Print all Contacts.");
                 Console.WriteLine("4. Edit a contact.");
                 Console.WriteLine("5. Delete Contact.");
-                Console.WriteLine("6. Search contact by city or state");
+                Console.WriteLine("6. Search contact.");
                 Console.WriteLine("7. View Contacts by City ");
                 Console.WriteLine("8. View Contacts by State ");
                 Console.WriteLine("9. Contacts count by City");
                 Console.WriteLine("10. Contacts count by State");
-                Console.WriteLine("11. Sort enteries in the address book");
-                Console.WriteLine("12. Quit");
+                Console.WriteLine("11. Sort entries in the address book by FirstName and LastName");
+                Console.WriteLine("12. Sort entries in the address book by City");
+                Console.WriteLine("13. Sort entries in the address book by State");
+                Console.WriteLine("14. Sort entries in the address book by Zipcode");
+                Console.WriteLine("15. Quit");
                 Console.Write("Option: ");
 
                 string choice = Console.ReadLine();
@@ -133,6 +136,24 @@
                         addressBookManager.SortContactsByName(nameToSort);
                         break;
                     case "12":
+                        Console.WriteLine("Enter address book name: ");
+                        string sortByCity = Console.ReadLine();
+
+                        addressBookManager.SortContactsByCity(sortByCity);
+                        break;
+                    case "13":
+                        Console.WriteLine("Enter address book name: ");
+                        string sortByState = Console.ReadLine();
+
+                        addressBookManager.SortContactsByState(sortByState);
+                        break;
+                    case "14":
+                        Console.WriteLine("Enter address book name: ");
+                        string sortByZipcode = Console.ReadLine();
+
+                        addressBookManager.SortContactsByZipcode(sortByZipcode);
+                        break;
+                    case "15":
                         Console.WriteLine("Exiting...");
                         return;
                     default:
