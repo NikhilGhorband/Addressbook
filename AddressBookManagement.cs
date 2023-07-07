@@ -71,7 +71,7 @@ namespace AddressBook
             contactToEdit.Address = newAddress;
             contactToEdit.City = newCity;
             contactToEdit.State = newState;
-            contactToEdit.Pincode = newPin;
+            contactToEdit.Pincode = newZip;
             contactToEdit.PhoneNumber = newPhoneNumber;
             contactToEdit.Email = newEmail;
 
